@@ -505,10 +505,23 @@ If I continued this project, I would add:
 
 ## 📖 Resources That Helped
 
+**Tutorials & Research:**
+- Watched multiple Snake game tutorials on YouTube to understand:
+  - How professional UIs are structured
+  - Different button placements and designs
+  - What additional features could enhance gameplay
+  - Best practices for game controls and responsiveness
 - JavaScript documentation on arrays and objects
 - CSS Grid guide
 - localStorage API docs
 - Understanding setInterval and clearInterval timing
+
+**Key Inspiration from Tutorials:**
+- Side-placed controls (inspired me to put Grid on LEFT and Speed on RIGHT)
+- Importance of visual feedback (disabled buttons, modal overlays)
+- Game stats display at top (Best Score, Timer, Current Score)
+- Pause/Stop functionality for better UX
+- Expandable grid concept to increase difficulty
 
 ---
 
