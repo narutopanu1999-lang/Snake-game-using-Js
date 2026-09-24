@@ -1,5 +1,10 @@
 # 🐍 Snake Game - A Learning Journey
 
+> **📝 A Note on This Documentation:**  
+> I built this entire Snake Game myself from scratch! However, I used **AI assistance** to help format and organize this README to make it more presentable and easier to understand. Initially, I had written out all my thoughts as paragraphs with code mixed in, and it was hard to read. With AI's help, I reorganized it into clear sections with proper formatting, better explanations, and structured code examples. The content and learning are 100% mine - the AI just helped make it look professional! 😊
+
+---
+
 Hi! I'm documenting how I built an interactive **Snake Game** using HTML, CSS, and JavaScript. This is a complete guide showing what I learned and how I implemented each feature step by step.
 
 ---
