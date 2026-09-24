@@ -1,7 +1,7 @@
 # 🐍 Snake Game - A Learning Journey
 
 > **📝 A Note on This Documentation:**  
-> I built this entire Snake Game myself from scratch! However, I used **AI assistance** to help format and organize this README to make it more presentable and easier to understand. Initially, I had written out all my thoughts as paragraphs with code mixed in, and it was hard to read. With AI's help, I reorganized it into clear sections with proper formatting, better explanations, and structured code examples. The content and learning are 100% mine - the AI just helped make it look professional! 😊
+> I built this entire Snake Game myself from scratch! I also watched different Snake Game tutorials to learn how the UI, buttons, and extra features could be designed. I used **AI assistance** to help format and organize this README to make it more presentable and easier to understand. Initially, I had written out all my thoughts as paragraphs with code mixed in, and it was hard to read. With AI's help, I reorganized it into clear sections with proper formatting, better explanations, and structured code examples. The content and learning are 100% mine - the AI just helped make it look professional! 😊
 
 ---
 
@@ -511,6 +511,10 @@ If I continued this project, I would add:
   - Different button placements and designs
   - What additional features could enhance gameplay
   - Best practices for game controls and responsiveness
+- Tutorial links I watched or used for ideas:
+  - [Bro Code - JavaScript Snake Game](https://www.youtube.com/watch?v=Je0B3nHhKmM)
+  - [Web Dev Simplified - JavaScript Snake Game](https://www.youtube.com/watch?v=QTcIXok9wNY)
+  - [YouTube Snake Game Tutorial Search](https://www.youtube.com/results?search_query=snake+game+html+css+javascript)
 - JavaScript documentation on arrays and objects
 - CSS Grid guide
 - localStorage API docs
