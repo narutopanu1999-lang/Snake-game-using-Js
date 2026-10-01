@@ -99,7 +99,7 @@ function adjustGridSize(delta) {
 }
 
 function updateSpeed() {
-    speed = document.getElementById('speedSlider').value;
+    speed = Number(document.getElementById('speedSlider').value);
     document.getElementById('speedDisplay').textContent = speed + 'ms';
     
     if(gameRunning) {
@@ -117,7 +117,6 @@ function startGame() {
     document.getElementById('stopBtn').disabled = false;
     document.getElementById('gridMinusBtn').disabled = true;
     document.getElementById('gridPlusBtn').disabled = true;
-    document.getElementById('speedSlider').disabled = true;
     
     startTimer();
     
@@ -284,7 +283,6 @@ addEventListener("keydown", (e) => {
        nextDirection = "right";
     }
 });
-
 
 
 

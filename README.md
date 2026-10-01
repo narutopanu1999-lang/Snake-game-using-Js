@@ -187,7 +187,7 @@ document.getElementById('gridPlusBtn')
 
 ### 5. **Speed Control Slider**
 
-A vertical slider on the RIGHT side lets players control snake speed from 50ms to 300ms.
+A vertical slider on the RIGHT side lets players control snake speed from 50ms to 300ms, both before and during a game. Changing it while playing immediately restarts the movement timer at the selected speed.
 
 **HTML:**
 ```html
@@ -200,7 +200,7 @@ A vertical slider on the RIGHT side lets players control snake speed from 50ms t
 **Speed Update Function:**
 ```javascript
 function updateSpeed() {
-    speed = document.getElementById('speedSlider').value;
+    speed = Number(document.getElementById('speedSlider').value);
     document.getElementById('speedDisplay').textContent = speed + 'ms';
     
     // Restart game loop with new speed
