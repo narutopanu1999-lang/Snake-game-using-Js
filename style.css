@@ -190,35 +190,10 @@ html{
     cursor: not-allowed;
 }
 
-/* Vertical Slider for Speed */
-.vertical-slider{
-    width: 6px;
-    height: 120px;
-    border-radius: 3px;
-    background: var(--border-primary-color);
-    outline: none;
-    -webkit-appearance: slider-vertical;
-    appearance: slider-vertical;
-    writing-mode: bt-lr;
-}
-
-.vertical-slider::-webkit-slider-thumb{
-    -webkit-appearance: slider-thumb;
-    appearance: slider-thumb;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: var(--bg-snake-color);
-    cursor: pointer;
-}
-
-.vertical-slider::-moz-range-thumb{
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: var(--bg-snake-color);
-    cursor: pointer;
-    border: none;
+.speed-controls{
+    display: flex;
+    align-items: center;
+    gap: var(--space-small);
 }
 
 /* Start Modal */
@@ -293,7 +268,6 @@ html{
 .block{
     width: 20px;
     height: 20px;
-    border: 1px solid var(--border-secondary-color);
 }
 
 

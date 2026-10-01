@@ -3,6 +3,9 @@ let col = 20;
 let row = 20;
 let minGridSize = 10;
 let maxGridSize = 50;
+let minSpeed = 50;
+let maxSpeed = 300;
+let speedStep = 25;
 
 let intervalId = null;
 let timerIntervalId = null;
@@ -98,9 +101,11 @@ function adjustGridSize(delta) {
     document.getElementById('gridPlusBtn').disabled = col >= maxGridSize;
 }
 
-function updateSpeed() {
-    speed = Number(document.getElementById('speedSlider').value);
+function adjustSpeed(direction) {
+    speed = Math.max(minSpeed, Math.min(maxSpeed, speed - direction * speedStep));
     document.getElementById('speedDisplay').textContent = speed + 'ms';
+    document.getElementById('speedMinusBtn').disabled = speed >= maxSpeed;
+    document.getElementById('speedPlusBtn').disabled = speed <= minSpeed;
     
     if(gameRunning) {
        clearInterval(intervalId);
@@ -133,7 +138,6 @@ function stopGame() {
     document.getElementById('stopBtn').disabled = true;
     document.getElementById('gridMinusBtn').disabled = false;
     document.getElementById('gridPlusBtn').disabled = false;
-    document.getElementById('speedSlider').disabled = false;
 }
 
 function restartGame(){
@@ -155,7 +159,6 @@ function restartGame(){
     document.getElementById('startBtn').disabled = false;
     document.getElementById('gridMinusBtn').disabled = false;
     document.getElementById('gridPlusBtn').disabled = false;
-    document.getElementById('speedSlider').disabled = false;
 }
 
 function gameLoop(){
@@ -231,7 +234,6 @@ function endGame() {
     document.getElementById('stopBtn').disabled = true;
     document.getElementById('gridMinusBtn').disabled = false;
     document.getElementById('gridPlusBtn').disabled = false;
-    document.getElementById('speedSlider').disabled = false;
     
     // Update best score
     if(score > bestScore) {
@@ -260,7 +262,8 @@ document.getElementById('restartBtn').addEventListener('click', restartGame);
 document.getElementById('restartModalBtn').addEventListener('click', restartGame);
 document.getElementById('gridMinusBtn').addEventListener('click', () => adjustGridSize(-2));
 document.getElementById('gridPlusBtn').addEventListener('click', () => adjustGridSize(2));
-document.getElementById('speedSlider').addEventListener('input', updateSpeed);
+document.getElementById('speedMinusBtn').addEventListener('click', () => adjustSpeed(-1));
+document.getElementById('speedPlusBtn').addEventListener('click', () => adjustSpeed(1));
 
 // Disable grid plus button if already at max
 if(col >= maxGridSize) {
@@ -283,7 +286,6 @@ addEventListener("keydown", (e) => {
        nextDirection = "right";
     }
 });
-
 
 
 

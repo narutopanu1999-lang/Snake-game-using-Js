@@ -52,8 +52,11 @@
             <div class="side-controls right-controls">
                 <div class="control-group">
                     <h4>Speed</h4>
-                    <input type="range" id="speedSlider" min="50" max="300" value="150" class="vertical-slider">
-                    <span id="speedDisplay" class="control-value">150ms</span>
+                    <div class="speed-controls">
+                        <button class="side-btn" id="speedMinusBtn" aria-label="Decrease snake speed" title="Slower">−</button>
+                        <span id="speedDisplay" class="control-value" aria-live="polite">150ms</span>
+                        <button class="side-btn" id="speedPlusBtn" aria-label="Increase snake speed" title="Faster">+</button>
+                    </div>
                 </div>
             </div>
         </div>

@@ -27,7 +27,7 @@ This is a fully functional **Snake Game** where players control a snake, eat foo
 ### Game Features:
 - ✅ Interactive snake movement with arrow keys
 - ✅ Grid size adjustment (10×10 to 50×50)
-- ✅ Speed control slider (50ms to 300ms)
+- ✅ Speed control buttons (50ms to 300ms)
 - ✅ Real-time timer
 - ✅ Best score tracking (saved in browser)
 - ✅ Game over detection
@@ -185,25 +185,23 @@ document.getElementById('gridPlusBtn')
 
 ---
 
-### 5. **Speed Control Slider**
+### 5. **Speed Control Buttons**
 
-A vertical slider on the RIGHT side lets players control snake speed from 50ms to 300ms, both before and during a game. Changing it while playing immediately restarts the movement timer at the selected speed.
+The − and + buttons on the RIGHT side adjust the movement interval in 25ms steps, within a 50ms to 300ms range. Press + to make the snake faster (lower interval) or − to make it slower (higher interval). The buttons work before and during a game, and changes immediately update the movement timer.
 
 **HTML:**
 ```html
-<input type="range" id="speedSlider" 
-       min="50" max="300" value="150" 
-       class="vertical-slider">
+<button id="speedMinusBtn" aria-label="Decrease snake speed">−</button>
 <span id="speedDisplay">150ms</span>
+<button id="speedPlusBtn" aria-label="Increase snake speed">+</button>
 ```
 
 **Speed Update Function:**
 ```javascript
-function updateSpeed() {
-    speed = Number(document.getElementById('speedSlider').value);
+function adjustSpeed(direction) {
+    speed = Math.max(50, Math.min(300, speed - direction * 25));
     document.getElementById('speedDisplay').textContent = speed + 'ms';
     
-    // Restart game loop with new speed
     if(gameRunning) {
         clearInterval(intervalId);
         intervalId = setInterval(gameLoop, speed);
@@ -211,16 +209,7 @@ function updateSpeed() {
 }
 ```
 
-**Vertical Slider CSS:**
-```css
-.vertical-slider {
-    width: 6px;
-    height: 120px;
-    writing-mode: bt-lr;  /* Makes it vertical */
-}
-```
-
-**What I Learned:** CSS `writing-mode` property controls slider orientation! `clearInterval()` and `setInterval()` together restart the game loop.
+**What I Learned:** `clearInterval()` and `setInterval()` together restart the game loop when speed changes.
 
 ---
 
@@ -457,8 +446,7 @@ Tracked multiple game states:
 ### 4. **Event Handling**
 Used different event types:
 - `keydown` for snake direction
-- `click` for buttons
-- `input` for speed slider
+- `click` for game, grid, and speed control buttons
 
 ### 5. **Performance Optimization**
 - Used `blocks` object for O(1) element lookup instead of searching DOM
@@ -497,7 +485,7 @@ If I continued this project, I would add:
 ## 🤔 Challenges I Faced
 
 1. **Infinite Grid**: First attempted infinite grid expansion, but limited to 50×50 for performance
-2. **Slider Direction**: Getting vertical slider working took some CSS magic
+2. **Speed Controls**: Making the speed controls easy to adjust without a slider.
 3. **Timing Issues**: Timer and game loop intervals had to be managed separately
 4. **LocalStorage Scope**: Learned that localStorage persists across tabs!
 
